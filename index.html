@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <title>4th-checkpoint</title>
 </head>
 
@@ -20,8 +23,43 @@
             </a>
         </nav>
     </header>
-    <main>
-        <div id="app"></div>
+    <main class="container-fluid d-flex justify-content-around flex-column">
+        <section id="weather" class="row">
+            <div class="col">
+                Weather App
+            </div>
+        </section>
+        <section id="clock" class="row">
+            <div class="col">
+                Clock
+            </div>
+        </section>
+        <section id="img-quote-todo" class="row">
+            <div class="col-4">
+                Image
+            </div>
+            <div class="col-4">
+                Quote
+            </div>
+            <div class="col-4">
+                <div class="col-md-4">
+                    <div class="pizza-card shadow mb-5 bg-white rounded">
+                        <div class="p-3 card-height">
+                            <h4>INBOX</h4>
+                            <!--- NOTE buttons need wired ---->
+                        </div>
+                        <div id="todos"></div>
+                        <form class="d-flex p-2" onsubmit="app.todosController.createTodo()">
+                            <input type="text" name="todoName" required id="name" class="form-control"
+                                placeholder="Add Todo..." aria-describedby="helpId" required minlength="3"
+                                maxlength="50">
+                            <button type="submit" class="btn btn-success" title='add todo'><i
+                                    class="fas fa-plus"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center">
@@ -30,7 +68,9 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 

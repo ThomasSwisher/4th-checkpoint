@@ -10695,4 +10695,27 @@ main {
   flex-grow: 1;
 }
 
+.form-control {
+  border-top-color: white;
+  border-right-color: white;
+  border-left-color: white;
+  
+}
+
+.card-height{
+  min-height: 250px;
+}
+
+.on-hoover {
+  cursor: pointer;
+}
+
+.pizza-card {
+  min-width: 30vh !important;
+}
+
+.row {
+  min-height: 100px;
+}
+
 /*# sourceMappingURL=main.css.map */
