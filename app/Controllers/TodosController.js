@@ -6,8 +6,8 @@ import { todosService } from "../Services/TodosService.js";
 function _draw() {
     let todos = ProxyState.todos
     let template = ''
-    todos.forEach(t => {
-        template += todo.Template
+    todos.forEach(todos => {
+        template += todos.Template
     })
     document.getElementById('todos').innerHTML = template
 }
@@ -50,10 +50,19 @@ export default class TodosController {
 
     // NOTE ==========TODO=============
     deleteTodo(id) {
-        // try {
-        //     housesService.deleteHouse(id)
-        // } catch (error) {
-        //     console.error(error)
-        // }
+        try {
+            todosService.deleteTodo(id)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    completed(id) {
+        try {
+            todosService.completed(id)
+        } catch (error) {
+            console.error(error)
+
+        }
     }
 }
