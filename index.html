@@ -16,6 +16,8 @@
 
 <body>
     <header>
+        <style class="bk-ground-img">
+        </style>
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
@@ -24,29 +26,32 @@
         </nav>
     </header>
     <main class="container-fluid d-flex justify-content-around flex-column">
+        <div id="bk-img" class="bk-ground-img"></div>
+        <!--- NOTE Weather ---->
         <section id="weather" class="row">
             <div class="col">
                 Weather App
             </div>
         </section>
+        <!--- NOTE Clock ---->
         <section id="clock" class="row">
             <div class="col">
                 Clock
             </div>
         </section>
+        <!--- NOTE Image Over Image ---->
         <section id="img-quote-todo" class="row">
             <div class="col-4">
                 Image
             </div>
-            <div class="col-4">
-                Quote
+            <div id="quote" class="col-4">
             </div>
             <div class="col-4">
                 <div class="col-md-4">
                     <div class="pizza-card shadow mb-5 bg-white rounded">
                         <div class="p-3 card-height">
                             <h4>INBOX</h4>
-                            <!--- NOTE buttons need wired ---->
+                            <!--- NOTE todos ---->
                         </div>
                         <div id="todos"></div>
                         <form class="d-flex p-2" onsubmit="app.todosController.createTodo()">

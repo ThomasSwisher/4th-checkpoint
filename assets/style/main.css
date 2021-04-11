@@ -10718,4 +10718,12 @@ main {
   min-height: 100px;
 }
 
+.bk-ground-img {
+  background-image: url("//placehold.it/1500x1500");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+}
+
 /*# sourceMappingURL=main.css.map */

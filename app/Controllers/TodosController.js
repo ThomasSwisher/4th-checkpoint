@@ -12,7 +12,7 @@ function _draw() {
     document.getElementById('todos').innerHTML = template
 }
 
-// NOTE ============= TODO =====================
+// ============= Listener =====================
 //Public
 export default class TodosController {
     constructor() {
@@ -21,8 +21,7 @@ export default class TodosController {
         this.getTodos()
     }
 
-
-    // NOTE ============= TODO =====================
+    // ============= Get Todos =====================
     async getTodos() {
         try {
             await todosService.getTodos()
@@ -31,7 +30,7 @@ export default class TodosController {
         }
     }
 
-
+    // ============= Create Todos =====================
     async createTodo() {
         try {
             // NOTE prevent window from opening on form submission.
@@ -47,16 +46,7 @@ export default class TodosController {
         }
 
     }
-
-    // NOTE ==========TODO=============
-    deleteTodo(id) {
-        try {
-            todosService.deleteTodo(id)
-        } catch (error) {
-            console.error(error)
-        }
-    }
-
+    //==========Completed Todo=============
     completed(id) {
         try {
             todosService.completed(id)
@@ -65,4 +55,14 @@ export default class TodosController {
 
         }
     }
+
+    //==========Delete Todo=============
+    deleteTodo(id) {
+        try {
+            todosService.deleteTodo(id)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
 }

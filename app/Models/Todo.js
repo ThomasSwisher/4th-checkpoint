@@ -4,6 +4,7 @@ export default class Todo {
         this.id = _id
         this.nameTodo = description
         this.completed = completed
+        //console.log(this.id)
     }
 
     get Template() {

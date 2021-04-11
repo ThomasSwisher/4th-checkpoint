@@ -2,16 +2,17 @@ import { ProxyState } from "../AppState.js";
 import Todo from "../Models/Todo.js";
 import { sandboxApi } from "./AxiosService.js";
 
-// NOTE Create!!
+// ============== Todos Service
 class TodosService {
+
+    // ============= GetTodo ==============
     async getTodos() {
         let res = await sandboxApi.get('thomas/todos')
-        // NOTE =====  console.log(res.data) ==================
+        // =====  console.log(res.data) ==================
         ProxyState.todos = res.data.map(c => new Todo(c))
     }
 
-
-    // NOTE Post========
+    // ============= CreateTodo ==============
     async createTodo(newTodo) {
         // NOTE post creates data in the server, the first argument to extend the url the second is the data to send
         let res = await sandboxApi.post('thomas/todos', newTodo)
@@ -23,20 +24,27 @@ class TodosService {
         ProxyState.todos = [...ProxyState.todos, todo]
     }
 
-
-
+    // TODO ============= Completed Todo ==============
     // find the todo / flip its completed bool and do put request todos at id
     async completed(id) {
+        // step 1: find car
         let todo = ProxyState.todos.find(t => t.id === id)
-        // step 2: modify it
+        // step 2: modify it (this sets the switch to store the listener)
         todo.completed = !todo.completed
-        console.log(todo)
+        //console.log(todo) once you click it shows true false in console.log
+
+        // step 3: send update to server (need to send the switch results)
+        await sandboxApi.put('thomas/todos/' + id, { completed: todo.completed })
+
+        // step 4: trigger the proxystate that a change was made
+        ProxyState.todos = ProxyState.todos
     }
 
+    // TODO ============= delete Todo ==============
     async deleteTodo(id) {
         // restful convention for a delete route is '/collectionName/:id' (the ':' indicates a variable value does not need to be added)
-        await sandboxApi.deleteTodo('todos/' + id)
-        ProxyState.todos = ProxyState.todos.filter(todo => todo.id != id)
+        await sandboxApi.delete('thomas/todos/' + id)
+        ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
     }
 
 }
