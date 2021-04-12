@@ -8,8 +8,8 @@ export default class Quote {
     get Template() {
 
         return /*html*/`
-                       <div class="col-12">${this.quote}</div>
-                       <div class="col-12">${this.author}</div>
+                       <div class="col-12 hover-div quote">${this.quote}</div>
+                       <div class="col-12 hidden-text">${this.author}</div>
                 `
     }
 

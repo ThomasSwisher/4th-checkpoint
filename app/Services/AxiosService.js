@@ -18,7 +18,7 @@ export const sandboxBackgroundApi = axios.create({
 });
 
 // NOTE Background =======================
-export const sandboxWeatherApi = axios.create({
+export const sandboxTempApi = axios.create({
     baseURL: "https://bcw-sandbox.herokuapp.com/api/weather",
     timeout: 3000
 });

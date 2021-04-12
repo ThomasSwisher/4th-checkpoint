@@ -10731,4 +10731,22 @@ main {
 padding-left: 10px;
 }
 
+.hidden-text {
+  display: none;
+}
+
+.hover-div:hover + .hidden-text {
+    display: block;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.quote {
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
 /*# sourceMappingURL=main.css.map */
