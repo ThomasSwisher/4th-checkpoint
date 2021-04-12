@@ -10748,5 +10748,10 @@ padding-left: 10px;
     font-weight: bold;
 }
 
+#quote {
+    align-items: flex-end;
+
+}
+
 
 /*# sourceMappingURL=main.css.map */
