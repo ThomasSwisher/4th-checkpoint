@@ -8,9 +8,10 @@ class BackgroundService {
     // ============= GetBackground==============
     async getBackground() {
         debugger
-        let res = await sandboxBackgroundApi.get(url)
+        let res = await sandboxBackgroundApi.get()
         // =====  console.log(res.data) ==================
         ProxyState.Background = new Background(res.data)
+        console.log(ProxyState.Background)
     }
 
 }
