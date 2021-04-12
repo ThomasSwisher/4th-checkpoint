@@ -10712,6 +10712,7 @@ main {
 
 .pizza-card {
   min-width: 30vh !important;
+  max-width: 250px;
 }
 
 .row {
@@ -10724,6 +10725,10 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-size: cover;
+}
+
+#todos {
+padding-left: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

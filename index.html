@@ -25,7 +25,7 @@
             </a>
         </nav>
     </header>
-    <main class="container-fluid d-flex justify-content-around flex-column">
+    <main id="background-image" class="container-fluid d-flex justify-content-around flex-column">
         <div id="bk-img" class="bk-ground-img"></div>
         <!--- NOTE Weather ---->
         <section id="weather" class="row">
@@ -41,27 +41,22 @@
         </section>
         <!--- NOTE Image Over Image ---->
         <section id="img-quote-todo" class="row">
-            <div class="col-4">
-                Image
+            <div id="quote" class="col-6">
+                quote not showing
             </div>
-            <div id="quote" class="col-4">
-            </div>
-            <div class="col-4">
-                <div class="col-md-4">
-                    <div class="pizza-card shadow mb-5 bg-white rounded">
-                        <div class="p-3 card-height">
-                            <h4>INBOX</h4>
-                            <!--- NOTE todos ---->
-                        </div>
-                        <div id="todos"></div>
-                        <form class="d-flex p-2" onsubmit="app.todosController.createTodo()">
-                            <input type="text" name="todoName" required id="name" class="form-control"
-                                placeholder="Add Todo..." aria-describedby="helpId" required minlength="3"
-                                maxlength="50">
-                            <button type="submit" class="btn btn-success" title='add todo'><i
-                                    class="fas fa-plus"></i></button>
-                        </form>
+            <div class="col-md-6">
+                <div class="pizza-card shadow mb-5 bg-white rounded">
+                    <div class="p-3 card-height">
+                        <h4>INBOX</h4>
+                        <!--- NOTE todos ---->
                     </div>
+                    <div id="todos"></div>
+                    <form class="d-flex p-2" onsubmit="app.todosController.createTodo()">
+                        <input type="text" name="todoName" required id="name" class="form-control"
+                            placeholder="Add Todo..." aria-describedby="helpId" required minlength="3" maxlength="50">
+                        <button type="submit" class="btn btn-success" title='add todo'><i
+                                class="fas fa-plus"></i></button>
+                    </form>
                 </div>
             </div>
         </section>

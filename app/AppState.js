@@ -12,6 +12,8 @@ class AppState extends EventEmitter {
 
   /** @type {quote} */
   quote = null
+  author = null
+
 
   /** @type {background} */
   background = null

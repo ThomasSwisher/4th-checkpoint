@@ -1,10 +1,8 @@
-
 export default class Todo {
-    constructor({ _id, description, completed = false }) {
+    constructor({ _id, description, completed }) {
         this.id = _id
         this.nameTodo = description
         this.completed = completed
-        //console.log(this.id)
     }
 
     get Template() {

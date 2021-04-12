@@ -5,7 +5,7 @@ import WeatherController from "./Controllers/WeatherController.js";
 
 class App {
   todosController = new TodosController();
-  // quoteController = new QuoteController();
+  quoteController = new QuoteController();
   backgroundController = new BackgroundController();
   weatherController = new WeatherController();
 }

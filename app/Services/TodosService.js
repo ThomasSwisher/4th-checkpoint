@@ -24,14 +24,14 @@ class TodosService {
         ProxyState.todos = [...ProxyState.todos, todo]
     }
 
-    // TODO ============= Completed Todo ==============
+    // ============= Completed Todo ==============
     // find the todo / flip its completed bool and do put request todos at id
     async completed(id) {
         // step 1: find car
         let todo = ProxyState.todos.find(t => t.id === id)
         // step 2: modify it (this sets the switch to store the listener)
         todo.completed = !todo.completed
-        //console.log(todo) once you click it shows true false in console.log
+        //console.log(todo)
 
         // step 3: send update to server (need to send the switch results)
         await sandboxApi.put('thomas/todos/' + id, { completed: todo.completed })
@@ -40,7 +40,7 @@ class TodosService {
         ProxyState.todos = ProxyState.todos
     }
 
-    // TODO ============= delete Todo ==============
+    // ============= delete Todo ==============
     async deleteTodo(id) {
         // restful convention for a delete route is '/collectionName/:id' (the ':' indicates a variable value does not need to be added)
         await sandboxApi.delete('thomas/todos/' + id)

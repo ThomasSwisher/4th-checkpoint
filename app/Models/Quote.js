@@ -2,7 +2,7 @@ export default class Quote {
     constructor({ content, author }) {
         this.quote = content
         this.author = author
-        //console.log(this.quote)
+        console.log(content)
     }
 
     get Template() {
