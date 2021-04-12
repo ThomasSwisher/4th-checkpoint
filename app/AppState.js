@@ -16,7 +16,8 @@ class AppState extends EventEmitter {
 
 
   /** @type {background} */
-  background = null
+  background = {}
+  image = {}
 
   /** @type {temp} */
   temp = null

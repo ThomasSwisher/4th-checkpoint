@@ -13,8 +13,8 @@ export const sandboxQuoteApi = axios.create({
 
 // NOTE Background =======================
 export const sandboxBackgroundApi = axios.create({
-    baseURL: "https://bcw-sandbox.herokuapp.com/api/background",
-    timeout: 3000
+    baseURL: "https://bcw-sandbox.herokuapp.com/api/images",
+    timeout: 5000
 });
 
 // NOTE Background =======================

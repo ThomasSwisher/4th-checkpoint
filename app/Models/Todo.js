@@ -3,9 +3,10 @@ export default class Todo {
         this.id = _id
         this.nameTodo = description
         this.completed = completed
-        console.log(this.completed)
+        //console.log(this.completed)
+
     }
-    //===================================(${this.completed} ? checked)=====================
+
     get Template() {
 
         return /*html*/`
