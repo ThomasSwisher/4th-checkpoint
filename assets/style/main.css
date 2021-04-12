@@ -5,6 +5,9 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ @import url('https://fonts.googleapis.com/css?family=Orbitron');
+
 :root {
   --blue: blue;
   --indigo: indigo;
@@ -10702,9 +10705,6 @@ main {
   
 }
 
-.card-height{
-  min-height: 250px;
-}
 
 .on-hoover {
   cursor: pointer;
@@ -10750,7 +10750,17 @@ padding-left: 10px;
 
 #quote {
     align-items: flex-end;
+}
 
+#clock {
+  font-family: 'Orbitron', sans-serif;
+  color: black;
+  font-size: 56px;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 
