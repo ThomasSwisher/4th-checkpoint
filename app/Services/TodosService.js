@@ -10,6 +10,10 @@ class TodosService {
         let res = await sandboxApi.get('thomas/todos')
         // =====  console.log(res.data) ==================
         ProxyState.todos = res.data.map(c => new Todo(c))
+        let todoCount = ProxyState.todos.length
+        document.getElementById("num-total").innerHTML = todoCount
+        let checkBoxCount = document.querySelectorAll('input[type="checkbox"]:checked').length
+        document.getElementById("num-left").innerHTML = checkBoxCount
     }
 
     // ============= CreateTodo ==============
@@ -22,12 +26,15 @@ class TodosService {
         //new "todo" then replacing the old ProxyState with combination of old todos and the new one.
         let todo = new Todo(res.data)
         ProxyState.todos = [...ProxyState.todos, todo]
+        let todoCount = ProxyState.todos.length
+        document.getElementById("num-total").innerHTML = todoCount
     }
 
     // ============= Completed Todo ==============
     // find the todo / flip its completed bool and do put request todos at id
     async completed(id) {
         // step 1: find car
+
         let todo = ProxyState.todos.find(t => t.id === id)
         // step 2: modify it (this sets the switch to store the listener)
         todo.completed = !todo.completed
@@ -38,6 +45,8 @@ class TodosService {
 
         // step 4: trigger the proxystate that a change was made
         ProxyState.todos = ProxyState.todos
+        let checkBoxCount = document.querySelectorAll('input[type="checkbox"]:checked').length
+        document.getElementById("num-left").innerHTML = checkBoxCount
     }
 
     // ============= delete Todo ==============
@@ -45,6 +54,10 @@ class TodosService {
         // restful convention for a delete route is '/collectionName/:id' (the ':' indicates a variable value does not need to be added)
         await sandboxApi.delete('thomas/todos/' + id)
         ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
+        let todoCount = ProxyState.todos.length
+        document.getElementById("num-total").innerHTML = todoCount
+        let checkBoxCount = document.querySelectorAll('input[type="checkbox"]:checked').length
+        document.getElementById("num-left").innerHTML = checkBoxCount
     }
 
 }
