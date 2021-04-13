@@ -10719,14 +10719,6 @@ main {
   min-height: 100px;
 }
 
-.bk-ground-img {
-  background-image: url("//placehold.it/1500x1500");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: cover;
-}
-
 #todos {
 padding-left: 10px;
 }
@@ -10761,6 +10753,11 @@ padding-left: 10px;
   padding-bottom: 40px;
   display: flex;
   justify-content: center;
+}
+
+#background-image {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
